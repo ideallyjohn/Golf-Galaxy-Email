@@ -1,694 +1,992 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golf Galaxy Email</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #dddddd;
-      font-family: "Lucida Grande", "Segoe UI", Verdana, sans-serif;
-    }
-    table {
-      border-spacing: 0;
-    }
-    td {
-      padding: 0;
-    }
-    img {
-      border: 0;
-      display: block;
-      width: 100%;
-    }
-    .wrapper {
-      width: 100%;
-      table-layout: fixed;
-    }
-    .main{
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      border-spacing: 0;
-      color: #2E2E2E;
-    }
-    .header{
-      width: 100%;
-      min-height: 70px;
-      padding: 0px 20px 10px 20px;
-    }
-    .align{
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .logo{
-      padding-top: 26px;
-    }
-    .scorecard{
-      float: right; 
-      min-width: 242px;
-    }
-    .sub-header{
-      width: 100%;
-      text-align: center;
-    }
-    .shipping{
-      width: 49.5%;
-      background-color: #F2F2F2;
-      float: left;
-    }
-    .curbside{
-      width: 49.5%;
-      background-color: #F2F2F2;
-      float: right;
-    }
-    .hero{
-      background-color: #FFFFFF;
-    }
-    .hero img{
-      width: 100%;
-    }
-    .h1{
-      font-weight: bold;
-      font-size: 24px;
-      text-align: center;
-    }
-    .heading{
-      font-weight: bold;
-      font-size: 20px;
-      text-align: center;
-    }
-    .herobtn{
-      text-decoration: none;
-      background-color: #4A5703;
-      color: #FFFFFF;
-      padding: 15px 30px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    .btn{
-      text-decoration: none;
-      background-color: #FFFFFF;
-      border: 2px solid #2E2E2E;
-      color: #2E2E2E;
-      padding: 11px 26px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    .section{
-      margin-top: 30px;
-      background-color: #FFFFFF;
-      width: 100%;
-    }
-    .info{
-      text-align: center;
-      margin: 0 auto;
-    }
-    .article{
-      margin-top: 30px;
-      background-color: #FFFFFF;
-      height: 600px;
-      margin: 0px 1%;
-      width: 47.6%;
-      min-width: 244px;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .card{
-      max-width: 32%;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .pages{
-      width: 100%;
-      padding: 10px 0px;
-      text-align: center;
-      line-height: 1.5;
-      border-bottom: 1px solid #2E2E2E;
-    }
-    .pages td{
-      display: inline-block;
-      vertical-align: top;
-    }
-    .pages a{
-      color: #2E2E2E;
-      padding: 0px 5px;
-      font-weight: bolder;
-      font-size: 14px;
-    }
-    .footer{
-      width: 100%;
-      margin-top: 30px;
-    }
-    .socials{
-      margin: 0 auto;
-    }
-    .socials img{
-      max-width: 26px;
-      padding: 0 15px;
-    }
-    @media screen and (max-width: 558px) {
-      .promo{
-        text-align: center;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golf Galaxy Email</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #f9f9f9;
+        font-family: 'Lucida Grande', 'Segoe UI', Verdana, sans-serif;
       }
-      .card{
-        max-width: 100%;
-        padding: 0px 20% 20px 20%;
+      table {
+        border-spacing: 0;
       }
-      .header{
-        text-align: center; 
+      td {
+        padding: 0;
       }
-      .logo{
-        padding: 10px 10% 0px 10%;
+      img {
+        border: 0;
+        display: block;
+        width: 100%;
       }
-      .scorecard{
-        float: none; 
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+      }
+      .main {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-spacing: 0;
+        color: #2e2e2e;
+      }
+      .header {
+        width: 100%;
+        min-height: 70px;
+        padding: 0px 20px 10px 20px;
+      }
+      .align {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .logo {
+        padding-top: 26px;
+      }
+      .scorecard {
+        float: right;
         min-width: 242px;
-        padding: 0 10%;
       }
-      .info{
-        padding-bottom: 10px;
-      }
-      .info .heading{
-        font-size: 16px;
-      }
-      .info p{
-        font-size: 14px;
-      }
-      .info .btn{
-        font-size: 14px;
-      }
-    }
-    @media screen and (max-width: 490px) {
-      .sub-header tr td{
+      .sub-header {
+        width: 100%;
         text-align: center;
       }
-      .shipping{
-        width: 100%;
-        line-height: .25;
-        margin-bottom: 2px;
+      .shipping {
+        width: 49.5%;
+        background-color: #f2f2f2;
+        float: left;
       }
-      .curbside{
-        width: 100%;
-        line-height: .25;
-        margin-bottom: 2px;
+      .curbside {
+        width: 49.5%;
+        background-color: #f2f2f2;
+        float: right;
       }
-    }
-  </style>
-</head>
-<body>
-  <table class="wrapper">
-    <tr>
-      <td>
-        <table class="main">
-          <tr>
-            <td>
-              <a href="">
-                <p style="color: #2E2E2E; font-size: 12px; text-align: center;">View Web Version</p>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="header">
-                <tr>
-                  <td class="logo align">
-                    <a href="https://www.golfgalaxy.com/">
-                      <img src="https://emailtuna.com/images/newsletter/257/257e79477f02b0a198a552e031689576.png" alt="" style="max-width: 220px;">
-                    </a>
-                  </td>
-                  <td class ="scorecard align">
-                    <table>
-                      <tr>
-                        <td>
-                          <a href="https://www.golfgalaxy.com/s/scorecard-benefits" style="text-decoration: none; color: #2E2E2E; text-align: right; font-size: 14px; font-weight:bolder;">
-                            <p>Keep Score. Achieve Gold.</p>
-                            <p style="text-decoration: underline; font-size: 12px;">Learn More</p>
-                          </a>
-                        </td>
-                        <td style="padding: 10px;">
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/6bc/6bc387655e657e56ce17af62d94caeea.png" alt="" style="max-width: 50px;">
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="sub-header">
-                <tr>
-                  <td>
-                    <table class="shipping">
-                      <tr>
-                        <td>
-                          <p><strong>Free Shipping*</strong></p>
-                          <p style="font-size: 14px;">Online Only. Exclusions apply. <a href="" style="color: #2E2E2E;"><strong>Details</strong></a></p>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="curbside">
-                      <tr>
-                        <td>
-                          <p><strong>One-Hour Curbside Pickup‡</strong></p>
-                          <p style="font-size: 14px;">Grab Your Gear & Go. <a href="" style="color: #2E2E2E;"><strong>Details</strong></a></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="hero">
-                <tr>
-                  <td>
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/102/1028346354f147931315e69d2dfd919b.png" alt="">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p class="h1">Men's Trend Shop</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; padding: 20px 0px 60px 0px;"><a href="" class="herobtn">SHOP NOW</a></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px 20px;">
-              <table class="section" style="min-width: 380px;">
-                <tr>
-                  <td width="50%">
-                    <a href="https://www.golfgalaxy.com/f/new-arrivals-apparel?filterFacets=facetStore%3AISA%2CSHIP%3B5495%3AMen%27s&pageNumber=0&camp=EML:GG_PRM:01312022_01312022_B_Golf_Mens_Trend_AM_GG:Body_Apparel&customerkey=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&AthleteID=81ae1a99-4dbc-329d-b3d8-d618a86e85de&hdpid=8b0d24de-3572-43bd-ad4f-d031304c3564&mi_ecmp=01312022_B_Golf_Mens_Trend_AM_GG&mi_u=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a">
-                      <img src="https://emailtuna.com/images/newsletter/6d2/6d2c6fb9ab3a00a8d12b36aa7353829e.jpg" alt="" width="100%">
-                    </a>
-                  </td>
-                  <td width="50%">
-                    <table class="info">
-                      <tr>
-                        <td>
-                          <p class="heading">Stand Out This Spring</p>
-                          <p style="padding-bottom: 30px;">New men's apparel styles.</p>
-                          <a href="" class="btn">Shop Now</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px 20px;">
-              <table class="section" style="min-width: 380px;">
-                <tr>                  
-                  <td width="50%">
-                    <table class="info">
-                      <tr>
-                        <td>
-                          <p class="heading">Stand Out This Spring</p>
-                          <p style="padding-bottom: 30px;">New men's apparel styles.</p>
-                          <a href="" class="btn">Shop Now</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td width="50%">
-                    <a href="https://www.golfgalaxy.com/f/mens-golf-shoes?camp=EML:GG_PRM:01312022_01312022_B_Golf_Mens_Trend_AM_GG:Body_Shoes&customerkey=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&AthleteID=81ae1a99-4dbc-329d-b3d8-d618a86e85de&hdpid=8b0d24de-3572-43bd-ad4f-d031304c3564&mi_ecmp=01312022_B_Golf_Mens_Trend_AM_GG&mi_u=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&filterFacets=facetStore%3AISA%2CSHIP">
-                      <img src="https://emailtuna.com/images/newsletter/796/796edb9905304c1540a0b50200988ded.jpg" width="100%">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px 20px;">
-              <table class="section">
-                <tr>
-                  <td>
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/b25/b25d124755536fcc1f5a6ff6d3bb97f0.jpg" alt="" width="100%">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="section promo" style="background-color: #dddddd; margin-top: 0px;">
-                <tr>
-                  <td>
-                    <table class="article" width="100%" style="margin-top: 30px;">
-                      <tr style="vertical-align: top;">
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/4f2/4f2269b0bf7ea8ec2b5d34c3c32b73e1.jpg" alt="" width="100%">
-                          </a>
-                        </td>
-                      </tr>
-                      <tr style="vertical-align: top;">
-                        <td style="padding: 0px 30px; text-align: center;">
-                          <p style="text-transform: uppercase; color: #FFFFFF; background-color: #2E2E2E; font-weight: bolder; font-size: 12px; padding: 8px 0px; letter-spacing: 1px; margin-top: 30px;"> AVAILABLE FOR PREORDER</p>
-                          <p class="heading">TaylorMade Stealth Woods and Irons</p>
-                          <p style="margin-bottom: 40px; margin-top: -10px;  font-size: 18px;">Plus, more new clubs.</p>
-                          <a href="" class="btn">Preorder Now</a>
-                          <p style="font-size: 12px; text-align: center; margin-top: 35px;">Woods ship 2/4/22. Irons and Stealth Plus+ Rescue ship 4/1/22.</p>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="article" width="100%" style="margin-top: 30px;">
-                      <tr style="vertical-align: top;">
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/f28/f284dc934e89836d6123341649f906e9.jpg" alt="" width="100%">
-                          </a>
-                        </td>
-                      </tr>
-                      <tr style="vertical-align: top;">
-                        <td style="padding: 0px 30px; text-align: center;">
-                          <p style="text-transform: uppercase; color: #FFFFFF; background-color: #2E2E2E; font-weight: bolder; font-size: 12px; padding: 8px 0px; letter-spacing: 1px; margin-top: 30px;">NOW AVAILABLE</p>
-                          <p class="heading">Callaway 2022 Chrome Soft Family with Precision Technology™</p>
-                          <p style="margin-bottom: 40px; margin-top: -10px;  font-size: 18px;">Plus, more tour-level balls.</p>
-                          <a href="" class="btn">Shop Now</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="section">
-                <tr>
-                  <td style="text-align: center; padding-bottom: 50px;">
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/4ca/4cadd63ff35ba18a25fc6b43259a5a7a.jpg" alt="">
-                    </a>
-                    <p class="heading" style="padding: 0 10% 20px 10%;">The Exclusive Destination for the Season’s Top-Rated Clubs</p>
-                    <a href="" class="btn">Shop Now</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="section" style="background-color: #dddddd;">
-                <tr>
-                  <td style="padding: 0 10px;">
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/51f/51fcfe2e4985a480a3e41ae3287ecde9.jpg" alt="">
-                    </a>                    
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="section" style="margin-top: 15px;">
-                <tr>
-                  <td>
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/cb9/cb97ec08bca07ddd1a0a321d2909d15c.png" alt="">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0 15px;">
-              <table class="section">
-                <tr>
-                  <td>
-                    <p class="h1">Selected just for you.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table class="recommend">
-                      <tr width="100%">
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/3b5/3b5032127b58387d94504fed4fa9cbe4.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/269/26967c267b378816ec351d958520cf68.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/458/458a5bbbfa302341198fa6f3a19d9f0e.jpg" alt="">
-                          </a>
-                        </td>
-                      </tr>
-                      <tr width="100%">
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/168/1683b90a45fe17c9629e0531b0759bec.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/0cf/0cfdf5329acefcd59367b4b3bf6a899e.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/c65/c6528e20baedd9e29d394381441846a2.jpg" alt="">
-                          </a>
-                        </td>
-                      </tr>
-                      <tr width="100%">
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/44f/44f53c6a83478627ce9ecd70642a710b.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/8cc/8cc65fd47c03e44ea0cbbcc0943255c7.jpg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/23b/23b937e17c74dcf8ee991378a5986b53.jpg" alt="">
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="section">
-                <tr>
-                  <td style="padding-bottom: 20px;">
-                    <p class="h1">Fast and easy ways to get your gear.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding-bottom: 20px; text-align: center;" width="100%">
-                    <table class="card">
-                      <tr>
-                        <td style="text-align: center; padding: 0 20px;">
-                          <img src="https://emailtuna.com/images/newsletter/302/302abeab0e00e54a3481c84db185939f.gif" alt="">
-                          <p class="heading">Curbside</p>
-                          <p style="font-size: 12px;">Stay in your car—we'll bring your order out to you. <a href="" style="color: #2E2E2E;">Details</a></p>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="card">
-                      <tr>
-                        <td style="text-align: center; padding: 0 20px;">
-                          <img src="https://emailtuna.com/images/newsletter/416/4168d2e21c5377bc5a7c621cb6f81e6a.gif" alt="">
-                          <p class="heading">In-Store Pickup</p>
-                          <p style="font-size: 12px;">Order online, then come inside to grab your gear. <a href="" style="color: #2E2E2E;">Details</a></p>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="card">
-                      <tr>
-                        <td style="text-align: center; padding: 0 20px;">
-                          <img src="https://emailtuna.com/images/newsletter/deb/deb844cc4692a69493213205ef001620.gif" alt="">
-                          <p class="heading">Delivery</p>
-                          <p style="font-size: 12px;">Free shipping on orders of $99 or more. <a href="" style="color: #2E2E2E;">Details</a></p>
-                        </td>
-                      </tr>
-                    </table>                    
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 100%; text-align: center;">
-              <table class="section" style="background-color: #2E2E2E;">
-                <tr>
-                  <td>
-                    <a href="">
-                      <img src="https://emailtuna.com/images/newsletter/11f/11fb433b49d4c61ea80bd5ab14f34d47.png" alt="" style="max-width: 316px; margin: 0 auto; padding-top: 30px;">
-                    </a>
-                    <a href="">
-                      <p style="color: #FFFFFF; padding-bottom: 10px;">If you find a lower price, we’ll match it.§ | <u>Learn More</u></p>
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="pages">
-                <tr>
-                  <td>
-                    <a href="">Club</a>
-                  </td>
-                  <td>
-                    <a href="">Apparel</a>
-                  </td>
-                  <td>
-                    <a href="">Shoes</a>
-                  </td>
-                  <td>
-                    <a href="">Golf Balls</a>
-                  </td>
-                  <td>
-                    <a href="">Bags</a>
-                  </td>
-                  <td>
-                    <a href="">Technology</a>
-                  </td>
-                  <td>
-                    <a href="">Accessories</a>
-                  </td>
-                  <td>
-                    <a href="">Services</a>
-                  </td>
-                  <td>
-                    <a href="">Clearance</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table class="footer">
-                <tr>
-                  <td>
-                    <table class="socials">
-                      <tr>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/e01/e01c8fbd1d5fbd5e42cf7e94a06b94b7.png" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/d97/d970fc2c3541579b3da50cbdfea7643a.png" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/5ee/5ee357fac3ce4c9e3038e1e9177d5642.png" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/625/62574c94403839850fbbc2e2853eae4f.png" alt="">
-                          </a>
-                        </td>
-                      </tr>
-                    </table> <!--End Socials -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table style="max-width: 220px; padding: 20px 0px; margin: 0 auto;">
-                      <tr>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/85a/85a7a0fc5635875ee4b3bf59f7b7f0d1.jpg" alt="">
-                          </a>                          
-                        </td>
-                        <td>
-                          <a href="">
-                            <img src="https://emailtuna.com/images/newsletter/fb9/fb9e3f1c1363f49f766e794e1a7a4079.jpg" alt="">
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table style="margin: 0 auto; font-size: 14px;">
-                      <tr>
-                        <td style="padding: 0px 15px;">
-                          <a href="" style="color: #2E2E2E;">Privacy Policy</a>
-                        </td>
-                        <td style="padding: 0px 15px;">
-                          <a href="" style="color: #2E2E2E;">Unsubscribe</a>
-                        </td>
-                        <td style="padding: 0px 15px;">
-                          <a href="" style="color: #2E2E2E;">View Web Version</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table style="font-size: 12px; padding-top: 20px;">
-                      <tr>
-                        <td>
-                          <p>You are receiving this email because you signed up as <strong>newsletter@gmail.com</strong> to receive our emails.</p>
-                          <p>*Certain shipping promotions have restrictions on the quantities and types of products and eligible locations. Shipping offers do not apply to personalized products or bulk orders. Due to package size restrictions from UPS, some large or bulky items (such as cart bags, travel cases and hitting nets) may have an oversize package handling charge applied. Items with oversize handling charges will be clearly indicated in the product description at the product purchase page. The additional charge for oversized items will vary depending on the size and will be combined with the regular shipping fee in the shipping charge box at checkout. Oversized items are not available for ground shipment outside the 48 contiguous states. 2nd Day and Next Day services for oversized items are only available by contacting a Golf Galaxy customer service representative. Please see <a href="" style="color: #2E2E2E;"><strong>Shipping Information</strong></a> for complete shipping details.</p>
-                          <p>‡Subject to product availability. Some exceptions apply. See In-Store Pickup Terms and Conditions at <a href="" style="color: #2E2E2E;"><strong>GolfGalaxy.com/Pickup</strong></a> for details.</p>
-                          <p>§ If you find a lower price on an identical item at a qualifying retailer (online or in-store), we will match it. Just show the qualifying retailer’s ad at the time of your in-store purchase, or call <a href="" style="color: #2E2E2E;">1-800-287-9060</a> when making your purchase online. Program terms and conditions and exclusions apply. See a Store Associate or <a href="" style="color: #2E2E2E;"><strong>GolfGalaxy.com/BestPriceGuarantee</strong></a> for details.</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table> <!--End Footer -->
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center; line-height: .5; padding: 10px 0 50px 0;">
-              <p style="font-weight: bolder;">Golf Galaxy, LLC</p>
-              <p style="font-size: 12px;">345 Court Street, Coraopolis, PA 15108</p>
-              <a href="" style="font-size: 12px; color: #2E2E2E;">(877) 846-9997</a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
+      .hero {
+        background-color: #ffffff;
+      }
+      .hero img {
+        width: 100%;
+      }
+      .h1 {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+      }
+      .heading {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+      }
+      .herobtn {
+        text-decoration: none;
+        background-color: #4a5703;
+        color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .btn {
+        text-decoration: none;
+        background-color: #ffffff;
+        border: 2px solid #2e2e2e;
+        color: #2e2e2e;
+        padding: 11px 26px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .section {
+        margin-top: 30px;
+        background-color: #ffffff;
+        width: 100%;
+      }
+      .info {
+        text-align: center;
+        margin: 0 auto;
+      }
+      .article {
+        margin-top: 30px;
+        background-color: #ffffff;
+        height: 600px;
+        margin: 0px 1%;
+        width: 47.6%;
+        min-width: 244px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .card {
+        max-width: 32%;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .pages {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center;
+        line-height: 1.5;
+        border-bottom: 1px solid #2e2e2e;
+      }
+      .pages td {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .pages a {
+        color: #2e2e2e;
+        padding: 0px 5px;
+        font-weight: bolder;
+        font-size: 14px;
+      }
+      .footer {
+        width: 100%;
+        margin-top: 30px;
+      }
+      .socials {
+        margin: 0 auto;
+      }
+      .socials img {
+        max-width: 26px;
+        padding: 0 15px;
+      }
+      @media screen and (max-width: 558px) {
+        .promo {
+          text-align: center;
+        }
+        .card {
+          max-width: 100%;
+          padding: 0px 20% 20px 20%;
+        }
+        .header {
+          text-align: center;
+        }
+        .logo {
+          padding: 10px 10% 0px 10%;
+        }
+        .scorecard {
+          float: none;
+          min-width: 242px;
+          padding: 0 10%;
+        }
+        .info {
+          padding-bottom: 10px;
+        }
+        .info .heading {
+          font-size: 16px;
+        }
+        .info p {
+          font-size: 14px;
+        }
+        .info .btn {
+          font-size: 14px;
+        }
+      }
+      @media screen and (max-width: 490px) {
+        .sub-header tr td {
+          text-align: center;
+        }
+        .shipping {
+          width: 100%;
+          line-height: 0.25;
+          margin-bottom: 2px;
+        }
+        .curbside {
+          width: 100%;
+          line-height: 0.25;
+          margin-bottom: 2px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="wrapper">
+      <tr>
+        <td>
+          <table class="main">
+            <tr>
+              <td>
+                <a href="">
+                  <p
+                    style="color: #2e2e2e; font-size: 12px; text-align: center"
+                  >
+                    View Web Version
+                  </p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="header">
+                  <tr>
+                    <td class="logo align">
+                      <a href="https://www.golfgalaxy.com/">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/257/257e79477f02b0a198a552e031689576.png"
+                          alt=""
+                          style="max-width: 220px"
+                        />
+                      </a>
+                    </td>
+                    <td class="scorecard align">
+                      <table>
+                        <tr>
+                          <td>
+                            <a
+                              href="https://www.golfgalaxy.com/s/scorecard-benefits"
+                              style="
+                                text-decoration: none;
+                                color: #2e2e2e;
+                                text-align: right;
+                                font-size: 14px;
+                                font-weight: bolder;
+                              "
+                            >
+                              <p>Keep Score. Achieve Gold.</p>
+                              <p
+                                style="
+                                  text-decoration: underline;
+                                  font-size: 12px;
+                                "
+                              >
+                                Learn More
+                              </p>
+                            </a>
+                          </td>
+                          <td style="padding: 10px">
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/6bc/6bc387655e657e56ce17af62d94caeea.png"
+                                alt=""
+                                style="max-width: 50px"
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="sub-header">
+                  <tr>
+                    <td>
+                      <table class="shipping">
+                        <tr>
+                          <td>
+                            <p><strong>Free Shipping*</strong></p>
+                            <p style="font-size: 14px">
+                              Online Only. Exclusions apply.
+                              <a href="" style="color: #2e2e2e"
+                                ><strong>Details</strong></a
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="curbside">
+                        <tr>
+                          <td>
+                            <p><strong>One-Hour Curbside Pickup‡</strong></p>
+                            <p style="font-size: 14px">
+                              Grab Your Gear & Go.
+                              <a href="" style="color: #2e2e2e"
+                                ><strong>Details</strong></a
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="hero">
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/102/1028346354f147931315e69d2dfd919b.png"
+                          alt=""
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="h1">Men's Trend Shop</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center; padding: 20px 0px 60px 0px">
+                      <a href="" class="herobtn">SHOP NOW</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px 20px">
+                <table class="section" style="min-width: 380px">
+                  <tr>
+                    <td width="50%">
+                      <a
+                        href="https://www.golfgalaxy.com/f/new-arrivals-apparel?filterFacets=facetStore%3AISA%2CSHIP%3B5495%3AMen%27s&pageNumber=0&camp=EML:GG_PRM:01312022_01312022_B_Golf_Mens_Trend_AM_GG:Body_Apparel&customerkey=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&AthleteID=81ae1a99-4dbc-329d-b3d8-d618a86e85de&hdpid=8b0d24de-3572-43bd-ad4f-d031304c3564&mi_ecmp=01312022_B_Golf_Mens_Trend_AM_GG&mi_u=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a"
+                      >
+                        <img
+                          src="https://emailtuna.com/images/newsletter/6d2/6d2c6fb9ab3a00a8d12b36aa7353829e.jpg"
+                          alt=""
+                          width="100%"
+                        />
+                      </a>
+                    </td>
+                    <td width="50%">
+                      <table class="info">
+                        <tr>
+                          <td>
+                            <p class="heading">Stand Out This Spring</p>
+                            <p style="padding-bottom: 30px">
+                              New men's apparel styles.
+                            </p>
+                            <a href="" class="btn">Shop Now</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px 20px">
+                <table class="section" style="min-width: 380px">
+                  <tr>
+                    <td width="50%">
+                      <table class="info">
+                        <tr>
+                          <td>
+                            <p class="heading">Stand Out This Spring</p>
+                            <p style="padding-bottom: 30px">
+                              New men's apparel styles.
+                            </p>
+                            <a href="" class="btn">Shop Now</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td width="50%">
+                      <a
+                        href="https://www.golfgalaxy.com/f/mens-golf-shoes?camp=EML:GG_PRM:01312022_01312022_B_Golf_Mens_Trend_AM_GG:Body_Shoes&customerkey=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&AthleteID=81ae1a99-4dbc-329d-b3d8-d618a86e85de&hdpid=8b0d24de-3572-43bd-ad4f-d031304c3564&mi_ecmp=01312022_B_Golf_Mens_Trend_AM_GG&mi_u=eec94fa6bb23ad2ee8a8bf01c001257e0748c66b45a5a687eccb8058cf1cbf4a&filterFacets=facetStore%3AISA%2CSHIP"
+                      >
+                        <img
+                          src="https://emailtuna.com/images/newsletter/796/796edb9905304c1540a0b50200988ded.jpg"
+                          width="100%"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px 20px">
+                <table class="section">
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/b25/b25d124755536fcc1f5a6ff6d3bb97f0.jpg"
+                          alt=""
+                          width="100%"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table
+                  class="section promo"
+                  style="background-color: #f9f9f9; margin-top: 0px"
+                >
+                  <tr>
+                    <td>
+                      <table
+                        class="article"
+                        width="100%"
+                        style="margin-top: 30px"
+                      >
+                        <tr style="vertical-align: top">
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/4f2/4f2269b0bf7ea8ec2b5d34c3c32b73e1.jpg"
+                                alt=""
+                                width="100%"
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr style="vertical-align: top">
+                          <td style="padding: 0px 30px; text-align: center">
+                            <p
+                              style="
+                                text-transform: uppercase;
+                                color: #ffffff;
+                                background-color: #2e2e2e;
+                                font-weight: bolder;
+                                font-size: 12px;
+                                padding: 8px 0px;
+                                letter-spacing: 1px;
+                                margin-top: 30px;
+                              "
+                            >
+                              AVAILABLE FOR PREORDER
+                            </p>
+                            <p class="heading">
+                              TaylorMade Stealth Woods and Irons
+                            </p>
+                            <p
+                              style="
+                                margin-bottom: 40px;
+                                margin-top: -10px;
+                                font-size: 18px;
+                              "
+                            >
+                              Plus, more new clubs.
+                            </p>
+                            <a href="" class="btn">Preorder Now</a>
+                            <p
+                              style="
+                                font-size: 12px;
+                                text-align: center;
+                                margin-top: 35px;
+                              "
+                            >
+                              Woods ship 2/4/22. Irons and Stealth Plus+ Rescue
+                              ship 4/1/22.
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table
+                        class="article"
+                        width="100%"
+                        style="margin-top: 30px"
+                      >
+                        <tr style="vertical-align: top">
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/f28/f284dc934e89836d6123341649f906e9.jpg"
+                                alt=""
+                                width="100%"
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr style="vertical-align: top">
+                          <td style="padding: 0px 30px; text-align: center">
+                            <p
+                              style="
+                                text-transform: uppercase;
+                                color: #ffffff;
+                                background-color: #2e2e2e;
+                                font-weight: bolder;
+                                font-size: 12px;
+                                padding: 8px 0px;
+                                letter-spacing: 1px;
+                                margin-top: 30px;
+                              "
+                            >
+                              NOW AVAILABLE
+                            </p>
+                            <p class="heading">
+                              Callaway 2022 Chrome Soft Family with Precision
+                              Technology™
+                            </p>
+                            <p
+                              style="
+                                margin-bottom: 40px;
+                                margin-top: -10px;
+                                font-size: 18px;
+                              "
+                            >
+                              Plus, more tour-level balls.
+                            </p>
+                            <a href="" class="btn">Shop Now</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="section">
+                  <tr>
+                    <td style="text-align: center; padding-bottom: 50px">
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/4ca/4cadd63ff35ba18a25fc6b43259a5a7a.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <p class="heading" style="padding: 0 10% 20px 10%">
+                        The Exclusive Destination for the Season’s Top-Rated
+                        Clubs
+                      </p>
+                      <a href="" class="btn">Shop Now</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="section" style="background-color: #f9f9f9">
+                  <tr>
+                    <td style="padding: 0 10px">
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/51f/51fcfe2e4985a480a3e41ae3287ecde9.jpg"
+                          alt=""
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="section" style="margin-top: 15px">
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/cb9/cb97ec08bca07ddd1a0a321d2909d15c.png"
+                          alt=""
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 15px">
+                <table class="section">
+                  <tr>
+                    <td>
+                      <p class="h1">Selected just for you.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="recommend">
+                        <tr width="100%">
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/3b5/3b5032127b58387d94504fed4fa9cbe4.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/269/26967c267b378816ec351d958520cf68.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/458/458a5bbbfa302341198fa6f3a19d9f0e.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr width="100%">
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/168/1683b90a45fe17c9629e0531b0759bec.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/0cf/0cfdf5329acefcd59367b4b3bf6a899e.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/c65/c6528e20baedd9e29d394381441846a2.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr width="100%">
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/44f/44f53c6a83478627ce9ecd70642a710b.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/8cc/8cc65fd47c03e44ea0cbbcc0943255c7.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/23b/23b937e17c74dcf8ee991378a5986b53.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="section">
+                  <tr>
+                    <td style="padding-bottom: 20px">
+                      <p class="h1">Fast and easy ways to get your gear.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="padding-bottom: 20px; text-align: center"
+                      width="100%"
+                    >
+                      <table class="card">
+                        <tr>
+                          <td style="text-align: center; padding: 0 20px">
+                            <img
+                              src="https://emailtuna.com/images/newsletter/302/302abeab0e00e54a3481c84db185939f.gif"
+                              alt=""
+                            />
+                            <p class="heading">Curbside</p>
+                            <p style="font-size: 12px">
+                              Stay in your car—we'll bring your order out to
+                              you. <a href="" style="color: #2e2e2e">Details</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="card">
+                        <tr>
+                          <td style="text-align: center; padding: 0 20px">
+                            <img
+                              src="https://emailtuna.com/images/newsletter/416/4168d2e21c5377bc5a7c621cb6f81e6a.gif"
+                              alt=""
+                            />
+                            <p class="heading">In-Store Pickup</p>
+                            <p style="font-size: 12px">
+                              Order online, then come inside to grab your gear.
+                              <a href="" style="color: #2e2e2e">Details</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="card">
+                        <tr>
+                          <td style="text-align: center; padding: 0 20px">
+                            <img
+                              src="https://emailtuna.com/images/newsletter/deb/deb844cc4692a69493213205ef001620.gif"
+                              alt=""
+                            />
+                            <p class="heading">Delivery</p>
+                            <p style="font-size: 12px">
+                              Free shipping on orders of $99 or more.
+                              <a href="" style="color: #2e2e2e">Details</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 100%; text-align: center">
+                <table class="section" style="background-color: #2e2e2e">
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img
+                          src="https://emailtuna.com/images/newsletter/11f/11fb433b49d4c61ea80bd5ab14f34d47.png"
+                          alt=""
+                          style="
+                            max-width: 316px;
+                            margin: 0 auto;
+                            padding-top: 30px;
+                          "
+                        />
+                      </a>
+                      <a href="">
+                        <p style="color: #ffffff; padding-bottom: 10px">
+                          If you find a lower price, we’ll match it.§ |
+                          <u>Learn More</u>
+                        </p>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="pages">
+                  <tr>
+                    <td>
+                      <a href="">Club</a>
+                    </td>
+                    <td>
+                      <a href="">Apparel</a>
+                    </td>
+                    <td>
+                      <a href="">Shoes</a>
+                    </td>
+                    <td>
+                      <a href="">Golf Balls</a>
+                    </td>
+                    <td>
+                      <a href="">Bags</a>
+                    </td>
+                    <td>
+                      <a href="">Technology</a>
+                    </td>
+                    <td>
+                      <a href="">Accessories</a>
+                    </td>
+                    <td>
+                      <a href="">Services</a>
+                    </td>
+                    <td>
+                      <a href="">Clearance</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="footer">
+                  <tr>
+                    <td>
+                      <table class="socials">
+                        <tr>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/e01/e01c8fbd1d5fbd5e42cf7e94a06b94b7.png"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/d97/d970fc2c3541579b3da50cbdfea7643a.png"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/5ee/5ee357fac3ce4c9e3038e1e9177d5642.png"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/625/62574c94403839850fbbc2e2853eae4f.png"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--End Socials -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table
+                        style="
+                          max-width: 220px;
+                          padding: 20px 0px;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tr>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/85a/85a7a0fc5635875ee4b3bf59f7b7f0d1.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                              <img
+                                src="https://emailtuna.com/images/newsletter/fb9/fb9e3f1c1363f49f766e794e1a7a4079.jpg"
+                                alt=""
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table style="margin: 0 auto; font-size: 14px">
+                        <tr>
+                          <td style="padding: 0px 15px">
+                            <a href="" style="color: #2e2e2e">Privacy Policy</a>
+                          </td>
+                          <td style="padding: 0px 15px">
+                            <a href="" style="color: #2e2e2e">Unsubscribe</a>
+                          </td>
+                          <td style="padding: 0px 15px">
+                            <a href="" style="color: #2e2e2e"
+                              >View Web Version</a
+                            >
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table style="font-size: 12px; padding-top: 20px">
+                        <tr>
+                          <td>
+                            <p>
+                              You are receiving this email because you signed up
+                              as <strong>newsletter@gmail.com</strong> to
+                              receive our emails.
+                            </p>
+                            <p>
+                              *Certain shipping promotions have restrictions on
+                              the quantities and types of products and eligible
+                              locations. Shipping offers do not apply to
+                              personalized products or bulk orders. Due to
+                              package size restrictions from UPS, some large or
+                              bulky items (such as cart bags, travel cases and
+                              hitting nets) may have an oversize package
+                              handling charge applied. Items with oversize
+                              handling charges will be clearly indicated in the
+                              product description at the product purchase page.
+                              The additional charge for oversized items will
+                              vary depending on the size and will be combined
+                              with the regular shipping fee in the shipping
+                              charge box at checkout. Oversized items are not
+                              available for ground shipment outside the 48
+                              contiguous states. 2nd Day and Next Day services
+                              for oversized items are only available by
+                              contacting a Golf Galaxy customer service
+                              representative. Please see
+                              <a href="" style="color: #2e2e2e"
+                                ><strong>Shipping Information</strong></a
+                              >
+                              for complete shipping details.
+                            </p>
+                            <p>
+                              ‡Subject to product availability. Some exceptions
+                              apply. See In-Store Pickup Terms and Conditions at
+                              <a href="" style="color: #2e2e2e"
+                                ><strong>GolfGalaxy.com/Pickup</strong></a
+                              >
+                              for details.
+                            </p>
+                            <p>
+                              § If you find a lower price on an identical item
+                              at a qualifying retailer (online or in-store), we
+                              will match it. Just show the qualifying retailer’s
+                              ad at the time of your in-store purchase, or call
+                              <a href="" style="color: #2e2e2e"
+                                >1-800-287-9060</a
+                              >
+                              when making your purchase online. Program terms
+                              and conditions and exclusions apply. See a Store
+                              Associate or
+                              <a href="" style="color: #2e2e2e"
+                                ><strong
+                                  >GolfGalaxy.com/BestPriceGuarantee</strong
+                                ></a
+                              >
+                              for details.
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!--End Footer -->
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  text-align: center;
+                  line-height: 0.5;
+                  padding: 10px 0 50px 0;
+                "
+              >
+                <p style="font-weight: bolder">Golf Galaxy, LLC</p>
+                <p style="font-size: 12px">
+                  345 Court Street, Coraopolis, PA 15108
+                </p>
+                <a href="" style="font-size: 12px; color: #2e2e2e"
+                  >(877) 846-9997</a
+                >
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
